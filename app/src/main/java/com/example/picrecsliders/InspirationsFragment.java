@@ -1,9 +1,7 @@
 package com.example.picrecsliders;
 
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.TextView;
+
 import com.tooltip.Tooltip;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,15 +23,22 @@ import java.util.Map;
 public class InspirationsFragment extends Fragment {
     private Tooltip tooltip;
     private HashMap<String, Integer> rolesToPoints = new HashMap<String, Integer>() {{
+        put("actionseek1", 50);
         put("active1", 50);
-        put("drifter1", 50);
-        put("escapist1", 50);
-        put("sun2",50);
-        put("sun1",50);
+        put("anthro2", 50);
         put("arch1",50);
-        put("arch2",50);
         put("classy1",50);
-        put("drifter2", 50);
+        put("drifter2",50);
+        put("educational1",50);
+        put("escapist1",50);
+        put("escapisttwo2", 50);
+        put("explorer2", 50);
+        put("independent1", 50);
+        put("independenttwo1", 50);
+        put("organized1", 50);
+        put("seeker1", 50);
+        put("sun1", 50);
+        put("thrill2", 50);
     }};
     ProfileFragment profileFragment = MainActivity.profileFragment;
 
@@ -57,7 +61,8 @@ public class InspirationsFragment extends Fragment {
         ImageView iw = item.findViewById(R.id.picture_id);
         iw.setImageResource(roleId);
         iw.setClipToOutline(true);
-
+        iw.getLayoutParams().width = 440;
+        iw.getLayoutParams().height = 292;
         SeekBar seekBar = item.findViewById(R.id.seekbar);
         layout.addView(item);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

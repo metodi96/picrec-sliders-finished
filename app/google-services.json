@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "756560684152",
+    "firebase_url": "https://picrecsliders.firebaseio.com",
+    "project_id": "picrecsliders",
+    "storage_bucket": "picrecsliders.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756560684152:android:3f3cd21ab0048960",
+        "android_client_info": {
+          "package_name": "com.example.picrecsliders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756560684152-5j66poh3523540g8k05rv74nql6inue3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhwy2YZugqvljuJ2rnQc-qRQhwKcipIY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756560684152-5j66poh3523540g8k05rv74nql6inue3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
