@@ -23,22 +23,22 @@ import java.util.Map;
 public class InspirationsFragment extends Fragment {
     private Tooltip tooltip;
     private HashMap<String, Integer> rolesToPoints = new HashMap<String, Integer>() {{
-        put("actionseek1", 50);
-        put("active1", 50);
-        put("anthro2", 50);
-        put("arch1",50);
-        put("classy1",50);
-        put("drifter2",50);
-        put("educational1",50);
-        put("escapist1",50);
-        put("escapisttwo2", 50);
-        put("explorer2", 50);
-        put("independent1", 50);
-        put("independenttwo1", 50);
-        put("organized1", 50);
-        put("seeker1", 50);
-        put("sun1", 50);
-        put("thrill2", 50);
+        put("actionseek", 50);
+        put("active", 50);
+        put("anthropologist", 50);
+        put("archaeologist", 50);
+        put("classy", 50);
+        put("drifter", 50);
+        put("educational", 50);
+        put("escapist", 50);
+        put("escapisttwo", 50);
+        put("explorer", 50);
+        put("independent", 50);
+        put("independenttwo", 50);
+        put("organized", 50);
+        put("seeker", 50);
+        put("sun", 50);
+        put("thrill", 50);
     }};
     ProfileFragment profileFragment = MainActivity.profileFragment;
 
@@ -92,7 +92,7 @@ public class InspirationsFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 rolesToPoints.put(role, seekBar.getProgress());
-                savePoints();
+                saveValues();
                 resetPoints();
             }
         });
@@ -119,12 +119,12 @@ public class InspirationsFragment extends Fragment {
             });
     }
 
-    public void savePoints() {
+    public void saveValues() {
         final Button savePoints = getView().findViewById(R.id.save_preferences);
        savePoints.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (countNotManipulatedFields(rolesToPoints) > 3) {
+                if (countModifiedElements(rolesToPoints) > 3) {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("rolesToPoints",rolesToPoints);
                     profileFragment.setArguments(bundle);
@@ -147,17 +147,7 @@ public class InspirationsFragment extends Fragment {
         });
     }
 
-
-    public int totalPoints(HashMap<String, Integer> hashMap) {
-        int result = 0;
-        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-            Integer value = entry.getValue();
-            result+=value;
-        }
-        return result;
-    }
-
-    public int countNotManipulatedFields(HashMap<String, Integer> hashMap) {
+    public int countModifiedElements(HashMap<String, Integer> hashMap) {
         int count = 0;
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
             Integer value = entry.getValue();
